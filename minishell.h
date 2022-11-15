@@ -1,5 +1,5 @@
-#ifndef MINISHELL_H
-#define MINISHELL_H
+#ifndef _MINISHELL_H_
+#define _MINISHELL_H_
 
 #include <stddef.h>
 #include <signal.h>
@@ -11,7 +11,8 @@
 #include "typedefs.h"
 #include "constants.h"
 
-/* global environment */
+
+/* global environemnt */
 extern char **environ;
 /* global program name */
 char *name;
@@ -24,11 +25,12 @@ void signal_handler(int);
 /* helpers for user inputs */
 char *get_user_input();
 
-/* helpers error handling */
-/* 0 :readline_error */
+/* helpers errors handling */
+/* 0 : readline_error */
 void readline_error(void);
 
-void (*handle_error[])(void) = {readline_error
+void (*handle_error[])(void) = {
+    readline_error
 };
 
-#endif /* MINISHELL_H */
+#endif /* _MINISHELL_H_ */
